@@ -2,38 +2,51 @@
       <div class="logo">
         <a target="_blank" rel="noopener noreferrer" 
            href="#" class="simple-text logo-normal">
-          Yoga Dashboard
+          The Daily Workout
         </a>
       </div>
       <div class="sidebar-wrapper">
         
         <ul class="nav">
-
-          <li class="nav-item {% if 'index' in segment %} active {% endif %}">
-            <a class="nav-link" href="{{ url_for('index') }}">
-              <i class="material-icons">dashboard</i>
-              <p>Dashboard</p>
-            </a>
-          </li>
-          <li class="nav-item {% if 'practice' in segment %} active {% endif %}">
-            <a class="nav-link" href="/practice.html">
-              <i class="material-icons">accessibility</i>
-              <p>Practice</p>
-            </a>
-          </li>
-          <li class="nav-item {% if 'user' in segment %} active {% endif %}">
-            <a class="nav-link" href="{{ url_for('user_profile') }}">
-              <i class="material-icons">person</i>
-              <p>User Profile</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="{{ url_for('logout') }}" >
-              <i class="material-icons">directions_run</i>
-              <p>Logout</p>
-            </a>
-          </li>
-
+          {% if current_user.is_authenticated %}
+            <li class="nav-item {% if 'index' in segment %} active {% endif %}">
+              <a class="nav-link" href="{{ url_for('index') }}">
+                <i class="material-icons">dashboard</i>
+                <p>Dashboard</p>
+              </a>
+            </li>
+            <li class="nav-item {% if 'practice' in segment %} active {% endif %}">
+              <a class="nav-link" href="/practice.html">
+                <i class="material-icons">accessibility</i>
+                <p>Practice</p>
+              </a>
+            </li>
+            <li class="nav-item {% if 'user' in segment %} active {% endif %}">
+              <a class="nav-link" href="{{ url_for('user_profile') }}">
+                <i class="material-icons">person</i>
+                <p>User Profile</p>
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="{{ url_for('logout') }}" >
+                <i class="material-icons">directions_run</i>
+                <p>Logout</p>
+              </a>
+            </li>
+          {% else %}
+            <li class="nav-item {% if 'login' in segment %} active {% endif %}">
+              <a class="nav-link" href="{{ url_for('login') }}">
+                <i class="material-icons">lockopen</i>
+                <p>Login</p>
+              </a>
+            </li>
+            <li class="nav-item {% if 'register' in segment %} active {% endif %}">
+              <a class="nav-link" href="{{ url_for('register') }}">
+                <i class="material-icons">subscriptions</i>
+                <p>Register</p>
+              </a>
+            </li>
+          {% endif %}
         </ul>
 
 
