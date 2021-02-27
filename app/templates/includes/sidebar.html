@@ -1,0 +1,42 @@
+    <div class="sidebar" data-color="purple" data-background-color="white" data-image="/static/assets/img/sidebar-1.jpg">
+      <div class="logo">
+        <a target="_blank" rel="noopener noreferrer" 
+           href="#" class="simple-text logo-normal">
+          Yoga Dashboard
+        </a>
+      </div>
+      <div class="sidebar-wrapper">
+        
+        <ul class="nav">
+
+          <li class="nav-item {% if 'index' in segment %} active {% endif %}">
+            <a class="nav-link" href="/">
+              <i class="material-icons">dashboard</i>
+              <p>Dashboard</p>
+            </a>
+          </li>
+          <li class="nav-item {% if 'practice' in segment %} active {% endif %}">
+            <a class="nav-link" href="/practice.html">
+              <i class="material-icons">accessibility</i>
+              <p>Practice</p>
+            </a>
+          </li>
+          <li class="nav-item {% if 'user' in segment %} active {% endif %}">
+            <a class="nav-link" href="/user.html">
+              <i class="material-icons">person</i>
+              <p>User Profile</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="#" >
+              <i class="material-icons">directions_run</i>
+              <p>Logout</p>
+            </a>
+          </li>
+
+        </ul>
+
+
+      </div>
+
+    </div>
