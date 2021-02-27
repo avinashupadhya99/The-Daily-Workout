@@ -1,0 +1,31 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Dashboard {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}
+
+{% endblock stylesheets %}
+
+{% block content %}
+<div class="text-center">
+    <h1>Tadasana</h1>
+    <video id="webcam" autoplay playsinline width="640" height="480"></video>
+</div>
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+<script type="text/javascript" src="https://unpkg.com/webcam-easy/dist/webcam-easy.min.js"></script>
+<script>
+    const webcamElement = document.getElementById('webcam');
+    const webcam = new Webcam(webcamElement, 'user');
+    webcam.start()
+    .then(result =>{
+        console.log("webcam started");
+    })
+    .catch(err => {
+        console.log(err);
+    });
+</script>
+{% endblock javascripts %}

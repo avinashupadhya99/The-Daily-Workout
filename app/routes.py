@@ -48,3 +48,8 @@ def logout():
 @login_required
 def user_profile():
     return render_template('user-profile.html')
+
+@app.route('/exercise/<int:id>')
+@login_required
+def exercise(id):
+    return render_template('exercise.html')

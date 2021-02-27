@@ -197,6 +197,7 @@ h1{
     margin: 0 0 2rem 0;
   }
 }
+.stretched-link::after{position:absolute;top:0;right:0;bottom:0;left:0;z-index:1;pointer-events:auto;content:"";background-color:rgba(0,0,0,0)}
 </style>
 {% endblock stylesheets %}
 
@@ -218,6 +219,7 @@ h1{
                           </div>
                       </div>
                   </div>
+                  <a href={{ url_for('exercise', id=1) }} class="stretched-link"></a>
               </div>
               <div class="card-col" ontouchstart="this.classList.toggle('hover');">
                   <div class="card-container">
