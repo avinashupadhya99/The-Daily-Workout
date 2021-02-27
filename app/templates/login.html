@@ -18,18 +18,19 @@
         <div class="card-body">
 
           <h6 class="card-category">
-              Add your credentials
+              Enter your credentials
           </h6>
           
           <br />
 
-          <form role="form" action="/">
-              
+          <form role="form" action="" method="post">
+            {{ form.hidden_tag() }}
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group">
                   <label class="bmd-label-floating">Username</label>
-                  <input type="text" class="form-control" placeholder="Username">
+                  <!-- <input type="text" class="form-control" placeholder="Username"> -->
+                  {{ form.username(size=32, class_="form-control") }}
                 </div>
               </div>
             </div>
@@ -40,7 +41,8 @@
               <div class="col-md-12">
                 <div class="form-group">
                   <label class="bmd-label-floating">Password</label>
-                  <input type="password" class="form-control" placeholder="Password">
+                  <!-- <input type="password" class="form-control" placeholder="Password"> -->
+                  {{ form.password(size=32, class_="form-control") }}
                 </div>
               </div>
             </div>
