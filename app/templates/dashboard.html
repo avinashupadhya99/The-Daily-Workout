@@ -205,114 +205,26 @@ h1{
 <div class="wrapper">
     <h1>Our Yoga Exercises</h1>
     <div class="card-cols">
-              <div class="card-col" ontouchstart="this.classList.toggle('hover');">
-                  <div class="card-container">
-                      <div class="front" style="background-image: url(https://unsplash.it/500/500/)">
-                          <div class="inner">
-                            <p>Tadasana</p>
-                            <span>Mountain Pose</span>
-                          </div>
-                      </div>
-                      <div class="back">
-                          <div class="inner">
-                            <p>This pose teaches one to stand with majestic steadiness like a mountain.</p>
-                          </div>
-                      </div>
-                  </div>
-                  <a href={{ url_for('exercise', id=1) }} class="stretched-link"></a>
-              </div>
-              <div class="card-col" ontouchstart="this.classList.toggle('hover');">
-                  <div class="card-container">
-                      <div class="front" style="url(https://unsplash.it/501/501/)">
-                          <div class="inner">
-                              <p>Vrikshasana</p>
-                            <span>Tree Pose</span>
-                          </div>
-                      </div>
-                      <div class="back">
-                          <div class="inner">
-                              <p>This pose gives you a sense of grounding. It improves your balance and strengthens your legs and back.</p>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="card-col" ontouchstart="this.classList.toggle('hover');">
-                  <div class="card-container">
-                      <div class="front" style="background-image: url(https://unsplash.it/502/502/)">
-                          <div class="inner">
-                              <p>Adho Mukho Svanasana</p>
-                            <span>Downward Facing Dog Pose</span>
-                          </div>
-                      </div>
-                      <div class="back">
-                          <div class="inner">
-                              <p>This pose stretches hamstrings, chest and lengthens the spine, providing additional blood flow to the head.</p>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="card-col" ontouchstart="this.classList.toggle('hover');">
-                  <div class="card-container">
-                      <div class="front" style="background-image: url(https://unsplash.it/503/503/)">
-                          <div class="inner">
-                              <p>Trikonasana </p>
-                            <span>Triangle Pose</span>
-                          </div>
-                      </div>
-                      <div class="back">
-                          <div class="inner">
-                              <p>It stretches the legs and torso, mobilises the hips and promotes deep breathing, leaving one with enlivening effects</p>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="card-col" ontouchstart="this.classList.toggle('hover');">
-                  <div class="card-container">
-                      <div class="front" style="background-image: url(https://unsplash.it/504/504/">
-                          <div class="inner">
-                              <p>Kursiasana</p>
-                            <span>Chair Pose</span>
-                          </div>
-                      </div>
-                      <div class="back">
-                          <div class="inner">
-                              <p>An intensely powerful pose, this one strengthens the muscles of the legs and arms.</p>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="card-col" ontouchstart="this.classList.toggle('hover');">
-                  <div class="card-container">
-                      <div class="front" style="background-image: url(https://unsplash.it/505/505/)">
-                          <div class="inner">
-                              <p>Naukasana</p>
-                            <span>Boat Pose</span>
-                          </div>
-                      </div>
-                      <div class="back">
-                          <div class="inner">
-                              <p>It tightens the abdominal muscles and strengthens shoulders and upper back.</p>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="card-col" ontouchstart="this.classList.toggle('hover');">
-                  <div class="card-container">
-                      <div class="front" style="background-image: url(https://unsplash.it/506/506/)">
-                          <div class="inner">
-                              <p>Bhujangasana</p>
-                            <span>Cobra Pose</span>
-                          </div>
-                      </div>
-                      <div class="back">
-                          <div class="inner">
-                              <p>This one will strengthen the lower back muscles while cushioning the spine, triceps and opens the chest to promote the inhalations.</p>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-   </div>
+      {% for exercise in exercises %}
+        <div class="card-col" ontouchstart="this.classList.toggle('hover');">
+            <div class="card-container">
+                <div class="front" style="background-image: url(https://unsplash.it/500/500/)">
+                    <div class="inner">
+                      <p>{{ exercise.name }}</p>
+                      <span>{{ exercise.subtitle }}</span>
+                    </div>
+                </div>
+                <div class="back">
+                    <div class="inner">
+                      <p>{{ exercise.description }}</p>
+                    </div>
+                </div>
+            </div>
+            <a href="{{ url_for('exercise', id=1) }}" class=""></a>
+        </div>
+      {% endfor %}
+    </div>
+</div>
 {% endblock content %}
 
 <!-- Specific Page JS goes HERE  -->

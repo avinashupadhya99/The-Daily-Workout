@@ -2,11 +2,12 @@ from app import app, db
 from flask import render_template, flash, redirect, request, url_for
 from flask_login import current_user, login_user, logout_user, login_required
 from app.forms import LoginForm, RegistrationForm
-from app.models import User
+from app.models import User, Exercise
 
 @app.route('/')
 def index():
-    return render_template('dashboard.html')
+    exercises = Exercise.query.all()
+    return render_template('dashboard.html', exercises=exercises)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -52,4 +53,5 @@ def user_profile():
 @app.route('/exercise/<int:id>')
 @login_required
 def exercise(id):
-    return render_template('exercise.html')
+    exercise = Exercise.query.get(id)
+    return render_template('exercise.html', exercise=exercise)
